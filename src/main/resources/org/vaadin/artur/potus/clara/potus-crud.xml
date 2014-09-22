@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VerticalLayout xmlns="urn:import:com.vaadin.ui" xmlns:l="urn:vaadin:parent"
+    height="100%" width="100%">
+    <HorizontalLayout spacing="true" width="100%"
+        margin="true">
+        <Label value="POTUS Database" width="" />
+        <Button caption="Add new" l:componentAlignment="MIDDLE_RIGHT"
+            l:expandRatio="1" styleName="primary" />
+    </HorizontalLayout>
+    <Table selectable="true" id="table" width="100%" height="100%"
+        l:expandRatio="1" />
+    <!-- would have used GridLayout but Clara does not support all operations -->
+    <VerticalLayout id="form" spacing="true" margin="true">
+        <HorizontalLayout spacing="true">
+            <TextField id="firstName" caption="First Name"
+                width="300px" />
+            <TextField id="lastName" caption="Last Name"
+                width="300px" />
+        </HorizontalLayout>
+        <HorizontalLayout spacing="true">
+            <ComboBox id="party" caption="Party" width="300px" />
+            <TextField id="tookOffice" caption="Took Office" />
+            <TextField id="leftOffice" caption="Left Office" />
+        </HorizontalLayout>
+        <HorizontalLayout spacing="true" width="100%">
+            <Button id="save" caption="Save" styleName="primary" />
+            <Button id="revert" caption="Revert" />
+            <Button id="delete" caption="Delete" l:componentAlignment="MIDDLE_RIGHT"
+                l:expandRatio="1" />
+        </HorizontalLayout>
+    </VerticalLayout>
+</VerticalLayout>
