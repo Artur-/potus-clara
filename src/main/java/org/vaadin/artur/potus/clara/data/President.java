@@ -1,4 +1,4 @@
-package org.vaadin.artur.potus.clara;
+package org.vaadin.artur.potus.clara.data;
 
 import java.time.LocalDate;
 

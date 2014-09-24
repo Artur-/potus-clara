@@ -7,6 +7,8 @@ import java.util.Locale;
 
 import javax.servlet.annotation.WebServlet;
 
+import org.vaadin.artur.potus.clara.data.Party;
+import org.vaadin.artur.potus.clara.data.President;
 import org.vaadin.teemu.clara.Clara;
 import org.vaadin.teemu.clara.binder.annotation.UiDataSource;
 
@@ -33,6 +35,11 @@ import com.vaadin.ui.UI;
 @Theme("valo")
 public class PotusUI extends UI {
 
+	@WebServlet(value = "/*", asyncSupported = true)
+	@VaadinServletConfiguration(productionMode = false, ui = PotusUI.class)
+	public static class Servlet extends VaadinServlet {
+	}
+
 	private DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDate(
 			FormatStyle.SHORT).withLocale(new Locale("fi", "FI"));
 
@@ -47,11 +54,6 @@ public class PotusUI extends UI {
 		};
 	};
 
-	@WebServlet(value = "/*", asyncSupported = true)
-	@VaadinServletConfiguration(productionMode = false, ui = PotusUI.class)
-	public static class Servlet extends VaadinServlet {
-	}
-
 	@Override
 	protected void init(VaadinRequest request) {
 		// 1. Create layout
@@ -65,7 +67,7 @@ public class PotusUI extends UI {
 					Object columnId) {
 				President p = (President) itemId;
 				return p.getTookOffice().format(formatter) + "-"
-				+ p.getLeftOffice().format(formatter);
+						+ p.getLeftOffice().format(formatter);
 			}
 		});
 		table.setVisibleColumns("firstName", "lastName", "party", "inOffice");
@@ -145,10 +147,10 @@ public class PotusUI extends UI {
 				.of(1797, 3, 4), LocalDate.of(1801, 3, 4)));
 		data.addBean(new President("Thomas", "Jefferson",
 				Party.DEMOCRAT_REPUBLICAN, LocalDate.of(1801, 3, 4), LocalDate
-				.of(1809, 3, 4)));
+						.of(1809, 3, 4)));
 		data.addBean(new President("James", "Madison",
 				Party.DEMOCRAT_REPUBLICAN, LocalDate.of(1809, 3, 4), LocalDate
-				.of(1812, 4, 20)));
+						.of(1812, 4, 20)));
 		data.addBean(new President("James", "Monroe",
 				Party.DEMOCRAT_REPUBLICAN, LocalDate.of(1817, 3, 4), LocalDate
 						.of(1825, 3, 4)));
