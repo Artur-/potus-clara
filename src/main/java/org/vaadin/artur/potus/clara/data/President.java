@@ -1,14 +1,14 @@
 package org.vaadin.artur.potus.clara.data;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class President {
 	private String firstName, lastName;
 	private Party party;
-	private LocalDate tookOffice, leftOffice;
+	private Date tookOffice, leftOffice;
 
 	public President(String firstName, String lastName, Party party,
-			LocalDate tookOffice, LocalDate leftOffice) {
+			Date tookOffice, Date leftOffice) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -41,19 +41,19 @@ public class President {
 		this.party = party;
 	}
 
-	public LocalDate getTookOffice() {
+	public Date getTookOffice() {
 		return tookOffice;
 	}
 
-	public void setTookOffice(LocalDate tookOffice) {
+	public void setTookOffice(Date tookOffice) {
 		this.tookOffice = tookOffice;
 	}
 
-	public LocalDate getLeftOffice() {
+	public Date getLeftOffice() {
 		return leftOffice;
 	}
 
-	public void setLeftOffice(LocalDate leftOffice) {
+	public void setLeftOffice(Date leftOffice) {
 		this.leftOffice = leftOffice;
 	}
 

@@ -19,8 +19,8 @@
         </HorizontalLayout>
         <HorizontalLayout spacing="true">
             <ComboBox id="party" caption="Party" width="300px" />
-            <TextField id="tookOffice" caption="Took Office" />
-            <TextField id="leftOffice" caption="Left Office" />
+            <PopupDateField id="tookOffice" caption="Took Office" />
+            <PopupDateField id="leftOffice" caption="Left Office" />
         </HorizontalLayout>
         <HorizontalLayout spacing="true" width="100%">
             <Button id="save" caption="Save" styleName="primary" />
